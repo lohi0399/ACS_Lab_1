@@ -1,0 +1,162 @@
+Determining if the CL_VERSION_2_2 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_3d4af && [1/2] Building C object CMakeFiles/cmTC_3d4af.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_3d4af.dir/CheckSymbolExists.c.o 
+/usr/bin/cc    -o CMakeFiles/cmTC_3d4af.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_2
+  return ((int*)(&CL_VERSION_2_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_2_1 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_f90d3 && [1/2] Building C object CMakeFiles/cmTC_f90d3.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_f90d3.dir/CheckSymbolExists.c.o 
+/usr/bin/cc    -o CMakeFiles/cmTC_f90d3.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_1
+  return ((int*)(&CL_VERSION_2_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_1bbab && [1/2] Building C object CMakeFiles/cmTC_1bbab.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_1bbab.dir/CheckSymbolExists.c.o 
+/usr/bin/cc    -o CMakeFiles/cmTC_1bbab.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_cf0cd && [1/2] Building C object CMakeFiles/cmTC_cf0cd.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_cf0cd.dir/CheckSymbolExists.c.o 
+/usr/bin/cc    -o CMakeFiles/cmTC_cf0cd.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_af7d4 && [1/2] Building C object CMakeFiles/cmTC_af7d4.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_af7d4.dir/CheckSymbolExists.c.o 
+/usr/bin/cc    -o CMakeFiles/cmTC_af7d4.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b1e8d && [1/2] Building C object CMakeFiles/cmTC_b1e8d.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_b1e8d.dir/CheckSymbolExists.c.o 
+/usr/bin/cc    -o CMakeFiles/cmTC_b1e8d.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File /home/hy/murali/acstud_lab1/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

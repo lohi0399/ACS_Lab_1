@@ -1,0 +1,25 @@
+[
+{
+  "directory": "/home/hy/murali/acstud_lab1/build",
+  "command": "g++  -DUSE_OPENMP -I/home/hy/murali/acstud_lab1/app/src   -std=c++11 -Ofast -Wall -Wno-deprecated -Wno-deprecated-declarations -Wno-ignored-attributes -mavx -fopenmp -g   -o CMakeFiles/acsmatmult.dir/src/acsmatmult/acsmatmult.cpp.o -c /home/hy/murali/acstud_lab1/app/src/acsmatmult/acsmatmult.cpp",
+  "file": "/home/hy/murali/acstud_lab1/app/src/acsmatmult/acsmatmult.cpp"
+},
+
+{
+  "directory": "/home/hy/murali/acstud_lab1/build",
+  "command": "g++  -DUSE_OPENMP -I/home/hy/murali/acstud_lab1/app/src   -std=c++11 -Ofast -Wall -Wno-deprecated -Wno-deprecated-declarations -Wno-ignored-attributes -mavx -fopenmp -g   -o CMakeFiles/acsmatmult.dir/src/acsmatmult/students/experiments.cpp.o -c /home/hy/murali/acstud_lab1/app/src/acsmatmult/students/experiments.cpp",
+  "file": "/home/hy/murali/acstud_lab1/app/src/acsmatmult/students/experiments.cpp"
+},
+
+{
+  "directory": "/home/hy/murali/acstud_lab1/build",
+  "command": "g++  -DUSE_OPENMP -I/home/hy/murali/acstud_lab1/app/src   -std=c++11 -Ofast -Wall -Wno-deprecated -Wno-deprecated-declarations -Wno-ignored-attributes -mavx -fopenmp -g   -o CMakeFiles/acsmatmult.dir/src/acsmatmult/students/matmult_simd.cpp.o -c /home/hy/murali/acstud_lab1/app/src/acsmatmult/students/matmult_simd.cpp",
+  "file": "/home/hy/murali/acstud_lab1/app/src/acsmatmult/students/matmult_simd.cpp"
+},
+
+{
+  "directory": "/home/hy/murali/acstud_lab1/build",
+  "command": "g++  -DUSE_OPENMP -I/home/hy/murali/acstud_lab1/app/src   -std=c++11 -Ofast -Wall -Wno-deprecated -Wno-deprecated-declarations -Wno-ignored-attributes -mavx -fopenmp -g   -o CMakeFiles/acsmatmult.dir/src/acsmatmult/students/matmult_omp.cpp.o -c /home/hy/murali/acstud_lab1/app/src/acsmatmult/students/matmult_omp.cpp",
+  "file": "/home/hy/murali/acstud_lab1/app/src/acsmatmult/students/matmult_omp.cpp"
+}
+]

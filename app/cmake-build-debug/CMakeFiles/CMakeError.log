@@ -1,0 +1,180 @@
+Determining if the CL_VERSION_2_2 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_fa870/fast && /usr/bin/make  -f CMakeFiles/cmTC_fa870.dir/build.make CMakeFiles/cmTC_fa870.dir/build
+make[1]: Entering directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fa870.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_fa870.dir/CheckSymbolExists.c.o -c /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_fa870.dir/build.make:78: CMakeFiles/cmTC_fa870.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_fa870/fast] Error 2
+
+
+File /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_2
+  return ((int*)(&CL_VERSION_2_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_2_1 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_97c62/fast && /usr/bin/make  -f CMakeFiles/cmTC_97c62.dir/build.make CMakeFiles/cmTC_97c62.dir/build
+make[1]: Entering directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_97c62.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_97c62.dir/CheckSymbolExists.c.o -c /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_97c62.dir/build.make:78: CMakeFiles/cmTC_97c62.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_97c62/fast] Error 2
+
+
+File /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_1
+  return ((int*)(&CL_VERSION_2_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_2c083/fast && /usr/bin/make  -f CMakeFiles/cmTC_2c083.dir/build.make CMakeFiles/cmTC_2c083.dir/build
+make[1]: Entering directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2c083.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2c083.dir/CheckSymbolExists.c.o -c /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_2c083.dir/build.make:78: CMakeFiles/cmTC_2c083.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_2c083/fast] Error 2
+
+
+File /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7f8b8/fast && /usr/bin/make  -f CMakeFiles/cmTC_7f8b8.dir/build.make CMakeFiles/cmTC_7f8b8.dir/build
+make[1]: Entering directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7f8b8.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7f8b8.dir/CheckSymbolExists.c.o -c /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_7f8b8.dir/build.make:78: CMakeFiles/cmTC_7f8b8.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_7f8b8/fast] Error 2
+
+
+File /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_98549/fast && /usr/bin/make  -f CMakeFiles/cmTC_98549.dir/build.make CMakeFiles/cmTC_98549.dir/build
+make[1]: Entering directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98549.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_98549.dir/CheckSymbolExists.c.o -c /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_98549.dir/build.make:78: CMakeFiles/cmTC_98549.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_98549/fast] Error 2
+
+
+File /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_89026/fast && /usr/bin/make  -f CMakeFiles/cmTC_89026.dir/build.make CMakeFiles/cmTC_89026.dir/build
+make[1]: Entering directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89026.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_89026.dir/CheckSymbolExists.c.o -c /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_89026.dir/build.make:78: CMakeFiles/cmTC_89026.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_89026/fast] Error 2
+
+
+File /home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

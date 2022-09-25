@@ -1,0 +1,3 @@
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/acsmatmult.dir
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/hy/murali/acstud_lab1/app/cmake-build-debug/CMakeFiles/rebuild_cache.dir

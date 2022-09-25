@@ -1,0 +1,3 @@
+/home/lohit/ACS_Lab/acstud_lab1-main/app/debug/CMakeFiles/acsmatmult.dir
+/home/lohit/ACS_Lab/acstud_lab1-main/app/debug/CMakeFiles/edit_cache.dir
+/home/lohit/ACS_Lab/acstud_lab1-main/app/debug/CMakeFiles/rebuild_cache.dir
