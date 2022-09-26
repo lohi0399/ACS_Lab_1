@@ -387,8 +387,8 @@ void runMatrixExperimentOMP(unsigned int min,
 
 }
 
-// void runMatrixExperimentOCL(unsigned int min, unsigned int max, unsigned int repeats, const std::string &file_out) {
-//   std::cout << "OpenCL matrix impl" << std::endl;
+void runMatrixExperimentOCL(unsigned int min, unsigned int max, unsigned int repeats, const std::string &file_out) {
+ std::cout << "OpenCL matrix impl" << std::endl;
 //   //std::cout << " Implementing OpenMP matrix multiplication." << std::endl;
 //   //std::cout << "OpenMP matrix multiplication benchmark." << std::endl;
 //   // Attempt to open the file for writing
@@ -473,4 +473,4 @@ void runMatrixExperimentOMP(unsigned int min,
 //     }
 //   }
 //   std::cout << " OpenCL matrix multiplication completed." << std::endl;
-// }
+ }
