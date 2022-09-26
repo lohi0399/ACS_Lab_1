@@ -387,90 +387,90 @@ void runMatrixExperimentOMP(unsigned int min,
 
 }
 
-void runMatrixExperimentOCL(unsigned int min, unsigned int max, unsigned int repeats, const std::string &file_out) {
-  std::cout << "OpenCL matrix impl" << std::endl;
-  //std::cout << " Implementing OpenMP matrix multiplication." << std::endl;
-  //std::cout << "OpenMP matrix multiplication benchmark." << std::endl;
-  // Attempt to open the file for writing
-  std::ofstream fos(file_out);
-  if (!fos.good()) {
-    std::cerr << "Could not open file " + file_out << std::endl;
-    std::exit(-1);
-  }
-  // Generate a stringstream to write output to both stdout and a file
-  std::stringstream ss;
+// void runMatrixExperimentOCL(unsigned int min, unsigned int max, unsigned int repeats, const std::string &file_out) {
+//   std::cout << "OpenCL matrix impl" << std::endl;
+//   //std::cout << " Implementing OpenMP matrix multiplication." << std::endl;
+//   //std::cout << "OpenMP matrix multiplication benchmark." << std::endl;
+//   // Attempt to open the file for writing
+//   std::ofstream fos(file_out);
+//   if (!fos.good()) {
+//     std::cerr << "Could not open file " + file_out << std::endl;
+//     std::exit(-1);
+//   }
+//   // Generate a stringstream to write output to both stdout and a file
+//   std::stringstream ss;
 
-  // Create a timer used for wall-clock time measurements
-  Timer t;
+//   // Create a timer used for wall-clock time measurements
+//   Timer t;
 
-  // Dump a header
-  generateHeader(ss,
-                 {"Experiment", "Matrix size", "Construct (s)", "Randomize (s)"},
-                 {"Float", "Double"},
-                 repeats);
-  dump(ss, fos, std::cout);
+//   // Dump a header
+//   generateHeader(ss,
+//                  {"Experiment", "Matrix size", "Construct (s)", "Randomize (s)"},
+//                  {"Float", "Double"},
+//                  repeats);
+//   dump(ss, fos, std::cout);
 
-  // Iterate over each experiment
-  for (unsigned int e = min; e < max; e++) {
-    // In this experiment, we use powers of 2 as the problem size.
-    // Not that that is not always necessary. You may also linearly grow the problem size.
-    // Shift a long value of 1 left by e, which is the same as 2^e, to obtain the matrix dimension
-    auto mat_rows = 1ul << e;
-    // Shift a long value of 1 left by e, which is the same as 2^e, dimentions for a 
-    auto mat_cols = 1ul << e;
+//   // Iterate over each experiment
+//   for (unsigned int e = min; e < max; e++) {
+//     // In this experiment, we use powers of 2 as the problem size.
+//     // Not that that is not always necessary. You may also linearly grow the problem size.
+//     // Shift a long value of 1 left by e, which is the same as 2^e, to obtain the matrix dimension
+//     auto mat_rows = 1ul << e;
+//     // Shift a long value of 1 left by e, which is the same as 2^e, dimentions for a 
+//     auto mat_cols = 1ul << e;
 
-    // Print experiment number
-    ss << std::setw(15) << (std::to_string(e) + ",");
+//     // Print experiment number
+//     ss << std::setw(15) << (std::to_string(e) + ",");
 
-    // Print the problem size
-    ss << std::setw(15) << (std::to_string(mat_rows) + ",") << std::flush;
+//     // Print the problem size
+//     ss << std::setw(15) << (std::to_string(mat_rows) + ",") << std::flush;
 
-    // Create the matrices
-    t.start();  // Start the timer.
-    auto mat_a = Matrix<float>(mat_cols, mat_rows);  // Make a matrix
-    auto mat_b = Matrix<float>(mat_cols, mat_rows);  // And another one, transposed.
-    auto mat_c = Matrix<double>(mat_cols, mat_rows);  // And another one, doubles.
-    auto mat_d = Matrix<double>(mat_cols, mat_rows);  // And another one, transposed.
-    t.stop();  // Stop the timer.
-    t.report(ss);  // Put interval on stdout
+//     // Create the matrices
+//     t.start();  // Start the timer.
+//     auto mat_a = Matrix<float>(mat_cols, mat_rows);  // Make a matrix
+//     auto mat_b = Matrix<float>(mat_cols, mat_rows);  // And another one, transposed.
+//     auto mat_c = Matrix<double>(mat_cols, mat_rows);  // And another one, doubles.
+//     auto mat_d = Matrix<double>(mat_cols, mat_rows);  // And another one, transposed.
+//     t.stop();  // Stop the timer.
+//     t.report(ss);  // Put interval on stdout
 
-    // Randomize their contents
-    t.start();
-    mat_a.randomize(2);
-    mat_b.randomize(4);
-    mat_c.randomize(6);
-    mat_d.randomize(8);
-    t.stop();
-    t.report(ss);
+//     // Randomize their contents
+//     t.start();
+//     mat_a.randomize(2);
+//     mat_b.randomize(4);
+//     mat_c.randomize(6);
+//     mat_d.randomize(8);
+//     t.stop();
+//     t.report(ss);
 
 
 
-    // Dump the initialization output
-    dump(ss, fos, std::cout);
-    auto mat_resultd = Matrix<double>(mat_cols, mat_rows);
-    auto mat_resultf = Matrix<double>(mat_cols, mat_rows);
-    // Repeat the floats experiment repeats times.
-    for (unsigned int r = 0; r < repeats; r++) {
-      t.start();  // Start the timer.
-      // Multiply the matrices
-      //auto mat_result = Matrix<float>::multiply(mat_a, mat_b);
-      auto mat_resultf = multiplyMatricesOCL(mat_a, mat_b);
-      t.stop();  // Stop the timer.
-      t.report(ss);
+//     // Dump the initialization output
+//     dump(ss, fos, std::cout);
+//     auto mat_resultd = Matrix<double>(mat_cols, mat_rows);
+//     auto mat_resultf = Matrix<double>(mat_cols, mat_rows);
+//     // Repeat the floats experiment repeats times.
+//     for (unsigned int r = 0; r < repeats; r++) {
+//       t.start();  // Start the timer.
+//       // Multiply the matrices
+//       //auto mat_result = Matrix<float>::multiply(mat_a, mat_b);
+//       auto mat_resultf = multiplyMatricesOCL(mat_a, mat_b);
+//       t.stop();  // Stop the timer.
+//       t.report(ss);
 
-      // Dump the repeat outcome
-      dump(ss, fos, std::cout);
-    }
+//       // Dump the repeat outcome
+//       dump(ss, fos, std::cout);
+//     }
 
-    // Repeat the doubles experiment repeats times.
-    for (unsigned int r = 0; r < repeats; r++) {
-      t.start();
-      auto mat_resultd = multiplyMatricesOCL(mat_c, mat_d);
-      t.stop();
+//     // Repeat the doubles experiment repeats times.
+//     for (unsigned int r = 0; r < repeats; r++) {
+//       t.start();
+//       auto mat_resultd = multiplyMatricesOCL(mat_c, mat_d);
+//       t.stop();
   
-      t.report(ss, r == (repeats - 1));
-      dump(ss, fos, std::cout);
-    }
-  }
-  std::cout << " OpenCL matrix multiplication completed." << std::endl;
-}
+//       t.report(ss, r == (repeats - 1));
+//       dump(ss, fos, std::cout);
+//     }
+//   }
+//   std::cout << " OpenCL matrix multiplication completed." << std::endl;
+// }
