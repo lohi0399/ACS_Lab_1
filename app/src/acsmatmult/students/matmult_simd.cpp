@@ -12,101 +12,68 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#pragma once
+
+#include <string>
+#include <tuple>
+#include <vector>
+#include "acsmatmult/utils/Matrix.h"
 #include "acsmatmult/matmult.h"
-#include <immintrin.h>  // Intel intrinsics for SSE/AVX.
 
-/* You may not remove these pragmas: */
-/*************************************/
-#pragma GCC push_options
-#pragma GCC optimize ("O0")
-/*************************************/
+/**
+ * @brief Test matrix multiplication
+ * @tparam T The type of the matrices.
+ * @return True if test passed, false if it didn't.
+ */
+template<typename T>
+bool testMatMult(unsigned int repeats, bool verbose) {
+  if (verbose) {
+    std::cerr << "Matrix multiplication functional test." << std::endl;
+  }
 
-typedef union _avxd {
-  __m256d val;
-  double arr[4];
-} avxd;
+  RandomGenerator<int64_t> rand(1337);
 
-Matrix<float> multiplyMatricesSIMD(Matrix<float> a, Matrix<float> b) {
-  /* REPLACE THE CODE IN THIS FUNCTION WITH YOUR OWN CODE */
-  /* YOU MUST USE VECTOR EXTENSIONS HERE */
-  auto result = Matrix<float>(a.rows, b.columns); 
-  
-    __m256 va, vb, vtemp;
-    __m128 vlow, vhigh, vresult;
+  bool pass = true;
 
+  for (unsigned int i = 0; i < repeats; i++) {
+    // Randomize the number of rows and columns to be uneven in a small range
+    size_t r = 11 + ((2 * (size_t) rand.next()) % 20);
+    size_t c = 11 + ((2 * (size_t) rand.next()) % 20);
 
-    for (int i = 0; i < a.rows; i++) {
-        for (int j = 0; j < b.columns; j++) {
-            for (int k = 0; k < a.columns; k += 8) {
-                // load
-                // va = _mm256_loadu_ps(a+(i*1024)+k); // matrix_a[i][k]
-                va = _mm256_loadu_ps((float*)&a(i, k));
-                // vb = _mm256_loadu_ps(a+(j*1024)+k); // matrix_b[j][k]
-                vb = _mm256_loadu_ps((float*)&b(i, k));
+    // Construct matrix operands
+    auto mat_a = Matrix<T>(r, c);
+    auto mat_b = Matrix<T>(c, r);
 
-                // multiply
-                vtemp = _mm256_mul_ps(va, vb);
+    // Randomize contents
+    mat_a.randomize(1337);
+    mat_b.randomize(42);
 
-                // add
-                // extract higher four floats
-                vhigh = _mm256_extractf128_ps(vtemp, 1); // high 128
-                // add higher four floats to lower floats
-                vresult = _mm_add_ps(_mm256_castps256_ps128(vtemp), vhigh);
-                // horizontal add of that result
-                vresult = _mm_hadd_ps(vresult, vresult);
-                // another horizontal add of that result
-                vresult = _mm_hadd_ps(vresult, vresult);
+    // Calculate app
+    auto mat_baseline = mat_a * mat_b;
 
-                // store
-                result(i,j) += _mm_cvtss_f32(vresult);
-            }
+    // Create a vector to store other matrix results
+    std::vector<std::tuple<std::string, Matrix<T>>> results;
+
+    // Try other functions
+    results.push_back(std::make_tuple("SIMD", multiplyMatricesSIMD(mat_a, mat_b)));
+// #ifdef USE_OPENMP
+// results.push_back(std::make_tuple("OpenMP", multiplyMatricesOMP(mat_a, mat_b, -1)));
+//#endif
+
+//#ifdef USE_OPENCL
+  //  results.push_back(std::make_tuple("OpenCL", multiplyMatricesOCL(mat_a, mat_b)));
+//#endif
+
+    // Check if they are similar within the accepted error.
+    for (auto result : results) {
+      auto approx_equal = std::get<1>(result) %= mat_baseline;
+      if (!approx_equal) {
+        if (verbose) {
+          std::cerr << "\t" << std::get<0>(result) << " failed." << std::endl;
         }
+      }
+      pass = pass && approx_equal;
     }
-    return result;
+  }
+  return pass;
 }
-
-
-Matrix<double> multiplyMatricesSIMD(Matrix<double> a,
-                                  Matrix<double> b) {
-  /* REPLACE THE CODE IN THIS FUNCTION WITH YOUR OWN CODE */
-  /* YOU MUST USE VECTOR EXTENSIONS HERE */
-      auto result = Matrix<double>(a.rows, b.columns); 
-  
-    __m256 va, vb, vtemp;
-    __m128 vlow, vhigh, vresult;
-
-
-    for (int i = 0; i < a.rows; i++) {
-        for (int j = 0; j < b.columns; j++) {
-            for (int k = 0; k < a.columns; k += 8) {
-                // load
-                // va = _mm256_loadu_ps(a+(i*1024)+k); // matrix_a[i][k]
-                __m256d va = _mm256_loadu_pd((double*)&a(i, k));
-                // vb = _mm256_loadu_ps(a+(j*1024)+k); // matrix_b[j][k]
-                __m256d vb = _mm256_loadu_pd((double*)&b(i, k));
-
-                // multiply
-                __m256d vtemp = _mm256_mul_pd(va, vb);
-
-                // add
-                // extract higher four floats
-                __m128d vhigh = _mm256_extractf128_pd(vtemp, 1); // high 128
-                // add higher four floats to lower floats
-                __m128d vresult = _mm_add_pd(_mm256_castpd256_pd128(vtemp), vhigh);
-                // horizontal add of that result
-                 vresult = _mm_hadd_pd(vresult, vresult);
-                // another horizontal add of that result
-                 vresult = _mm_hadd_pd(vresult, vresult);
-
-                // store
-                // result(i,j) += _mm_cvtss_si32(vresult);
-                _mm_storeu_pd((double*)&result(i, j) , vresult);
-            }
-        }
-    }
-    return result;
-}
-
-/*************************************/
-#pragma GCC pop_options
-/*************************************/
