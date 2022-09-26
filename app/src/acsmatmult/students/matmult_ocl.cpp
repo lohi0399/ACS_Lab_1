@@ -1,24 +1,24 @@
-// #ifdef __APPLE__
-// #include <OpenCL/opencl.h>
-// #else
-// #include <CL/cl.h>
-// #endif
+#ifdef __APPLE__
+#include <OpenCL/opencl.h>
+#else
+#include <CL/cl.h>
+#endif
 
-// #include "acsmatmult/matmult.h"
+#include "acsmatmult/matmult.h"
 
-// /* You may not remove these pragmas: */
-// /*************************************/
-// #pragma GCC push_options
-// #pragma GCC optimize ("O0")
+/* You may not remove these pragmas: */
+/*************************************/
+#pragma GCC push_options
+#pragma GCC optimize ("O0")
 
-// /*************************************/
+/*************************************/
 
-// // Macro to check clFunction outputs.
-// // Throw an error if not successful, to make debugging easier.
-// #define CHECK(err) if (err != CL_SUCCESS) { \
-//   throw std::runtime_error("OpenCL error: " + std::to_string(err) + \
-//   " in " + __FILE__ + " line " + std::to_string(__LINE__) ); \
-// }
+// Macro to check clFunction outputs.
+// Throw an error if not successful, to make debugging easier.
+#define CHECK(err) if (err != CL_SUCCESS) { \
+  throw std::runtime_error("OpenCL error: " + std::to_string(err) + \
+  " in " + __FILE__ + " line " + std::to_string(__LINE__) ); \
+}
 
 // ///@brief A little enum class to help us parse clDeviceInfo
 // enum class ClInfoType {
@@ -118,8 +118,8 @@
 //   return platform_ids;
 // }
 
-// Matrix<float> multiplyMatricesOCL(Matrix<float> a,
-//                                   Matrix<float> b) {
+Matrix<float> multiplyMatricesOCL(Matrix<float> a,
+                                  Matrix<float> b) {
 //   /* REPLACE THE CODE IN THIS FUNCTION WITH YOUR OWN CODE */
 //   /* YOU MUST USE OPENCL HERE */
 
@@ -255,10 +255,10 @@
 
 //   return c;
 
-// }
+}
 
-// Matrix<double> multiplyMatricesOCL(Matrix<double> a,
-//                                    Matrix<double> b) {
+Matrix<double> multiplyMatricesOCL(Matrix<double> a,
+                                   Matrix<double> b) {
 //   /* REPLACE THE CODE IN THIS FUNCTION WITH YOUR OWN CODE */
 //   /* YOU MUST USE OPENCL HERE */
 //   int err;
@@ -379,8 +379,8 @@
 //   // c.print();
 
 //   return c;
-// }
+}
 
-// /*************************************/
-// #pragma GCC pop_options
-// /*************************************/
+/*************************************/
+#pragma GCC pop_options
+/*************************************/
